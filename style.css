@@ -1,0 +1,81 @@
+:root{
+  --bg:#f2f3f7; --card:#fff; --text:#1f2430; --label:#3b3f4a;
+  --input-bg:#eaf2ff; --input-bd:#d8e6ff;
+  --primary:#4b6af7; --primary-h:#3f5ce0; --danger:#ff5a5a;
+  --shadow:0 12px 35px rgba(0,0,0,.08); --radius:18px;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text)}
+
+/* ——— Формы входа/регистрации ——— */
+.auth-center{min-height:100vh;display:grid;place-items:center}
+.login-card{width:320px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px}
+.login-card h1{margin:0 0 14px;text-align:center;font-size:26px;font-weight:700}
+label{display:block;margin:10px 0 6px;font-size:14px;color:var(--label)}
+input[type="text"],input[type="password"]{
+  width:100%;padding:10px 12px;font-size:14px;border:1px solid var(--input-bd);
+  border-radius:10px;background:var(--input-bg);outline:none
+}
+input:focus{border-color:#bcd1ff;box-shadow:0 0 0 3px rgba(75,106,247,.12)}
+.password-wrap{position:relative}
+.password-wrap input{padding-right:36px}
+.toggle-pass{
+  position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  width:22px;height:22px;border:none;background:none;font-size:15px;opacity:.6;cursor:pointer;
+  transition:opacity .2s,transform .2s;padding:0;line-height:1
+}
+.toggle-pass:hover{opacity:1;transform:scale(1.1)}
+button, .btn{
+  width:100%;margin-top:14px;padding:11px 12px;background:var(--primary);color:#fff;
+  border:none;border-radius:10px;font-size:15px;cursor:pointer;transition:background .15s
+}
+button:hover,.btn:hover{background:var(--primary-h)}
+.bottom-link{text-align:center;margin-top:10px;font-size:13px}
+.alert{padding:10px;border-radius:8px;margin:10px 0}
+.alert.ok{background:#e8fff0;color:#0a6b2b}
+.alert.err{background:#ffe8e8;color:#a40000}
+
+/* ——— Топбар и карточки (dashboard) ——— */
+.topbar{background:#fff;border-bottom:1px solid #e6e8ef;padding:12px 16px;
+  display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.brand{font-weight:700}
+.btn-out{background:var(--primary);color:#fff;text-decoration:none;padding:8px 14px;border-radius:8px}
+.wrap{max-width:1080px;margin:24px auto;padding:0 16px}
+.card{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:22px;margin-bottom:16px}
+.sub{margin:0 0 12px;color:#666}
+
+/* ——— Форма заявки ——— */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.span-2{grid-column:1/-1}
+textarea{width:100%;min-height:80px;padding:10px 12px;border:1px solid #d8e6ff;border-radius:10px;resize:vertical;background:#fff}
+
+/* ——— Таблица заявок ——— */
+.table{display:flex;flex-direction:column;gap:8px}
+.tr{display:grid;grid-template-columns:60px 120px 180px 150px 230px 1fr 160px 120px;gap:10px;align-items:flex-start}
+.tr.th{background:#eef2ff;color:#2b3a67;padding:10px;border-radius:10px;font-weight:600}
+.tr:not(.th){background:#fff;border:1px solid #e6e8ef;border-radius:10px;padding:10px}
+.btn.danger{background:var(--danger)}
+.btn.danger:hover{background:#e04848}
+.empty{padding:12px;color:#666}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .tr{grid-template-columns:60px 120px 1fr 150px 1fr 1fr 160px 120px}
+}
+@media (max-width:680px){
+  .login-card{width:92vw}
+  .tr{grid-template-columns:1fr}
+}
+.btn.secondary {
+  background: #6c757d;
+}
+.btn.secondary:hover {
+  background: #5a6268;
+}
+
+.divider {
+  margin: 10px 0;
+  border-top: 1px solid #ddd;
+}
